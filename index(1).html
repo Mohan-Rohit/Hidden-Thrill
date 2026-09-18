@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Thrill</title>
+    <link rel="stylesheet" href="style(1).css">
+</head>
+
+<body>
+
+    <!-- HOME PAGE -->
+    <section id="homePage" class="page active">
+
+        <div class="sun-glow"></div>
+
+        <header class="home-header">
+
+            <div>
+                <h1>Hidden Thrill</h1>
+                <p data-i18n="tagline">Every Card Hides a Surprise</p>
+            </div>
+
+            <div class="home-header-right">
+
+                <div class="user-profile">
+                    <span class="profile-icon">👤</span>
+                    <span id="profileName">User</span>
+                </div>
+
+                <button id="logoutBtn" class="logout-btn">
+                    Logout
+                </button>
+
+                <div class="language-box">
+                    <label for="languageSelect" data-i18n="language">Language</label>
+                    <select id="languageSelect">
+                        <option value="en">English</option>
+                        <option value="te">తెలుగు</option>
+                        <option value="hi">हिन्दी</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <main class="home-content">
+
+            <div class="home-hero">
+                <div class="hero-icon">🎴</div>
+                <h2 data-i18n="welcome">Welcome to Hidden Thrill</h2>
+                <p data-i18n="chooseGame">Choose your game and discover what is hidden.</p>
+            </div>
+
+            <div class="game-selection">
+
+                <button id="game1Btn" class="game-card game-card-one">
+                    <span class="game-number">01</span>
+                    <span class="game-icon">🎯</span>
+                    <span class="game-title" data-i18n="game1">Game 1</span>
+                    <span class="game-description" data-i18n="game1Desc">
+                        Lucky cards, mystery rewards and the final Winner Cup.
+                    </span>
+                    <span class="play-label" data-i18n="playNow">Play Now</span>
+                </button>
+
+                <button id="game2Btn" class="game-card game-card-two">
+                    <span class="game-number">02</span>
+                    <span class="game-icon">✨</span>
+                    <span class="game-title" data-i18n="game2">Game 2</span>
+                    <span class="game-description" data-i18n="game2Desc">
+                        A new hidden challenge is coming soon.
+                    </span>
+                    <span class="coming-label" data-i18n="arrivingSoon">Arriving Soon</span>
+                </button>
+
+            </div>
+
+            <div class="home-buttons">
+
+                <button id="historyBtn" class="secondary-btn">
+                    📜 <span data-i18n="history">History</span>
+                </button>
+
+                <button id="homeRulesBtn" class="secondary-btn">
+                    📖 <span data-i18n="rules">Rules</span>
+                </button>
+
+            </div>
+
+        </main>
+
+        <footer>
+            <p>Hidden Thrill © 2026</p>
+        </footer>
+
+    </section>
+
+
+    <!-- SETUP PAGE -->
+    <section id="setupPage" class="page">
+
+        <div class="setup-container">
+
+            <button id="setupBackBtn" class="back-btn">
+                ← <span data-i18n="back">Back</span>
+            </button>
+
+            <div class="setup-header">
+                <div class="setup-icon">🎮</div>
+                <h2 data-i18n="gameSetup">Game Setup</h2>
+                <p data-i18n="enterPlayers">Enter player names to begin.</p>
+            </div>
+
+            <div class="player-count-box">
+
+                <h3 data-i18n="numberOfPlayers">Number of Players</h3>
+
+                <div class="player-count-options">
+                    <button class="player-count-btn active" data-count="2">2</button>
+                    <button class="player-count-btn" data-count="4">4</button>
+                </div>
+
+            </div>
+
+            <div id="playerInputs" class="player-inputs"></div>
+
+            <button id="startGameBtn" class="primary-btn start-btn">
+                🎮 <span data-i18n="startGame">Start Game</span>
+            </button>
+
+            <p id="setupError" class="error-message"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- GAME PAGE -->
+    <section id="gamePage" class="page">
+
+        <div class="game-container">
+
+            <div class="game-topbar">
+
+                <button id="gameExitBtn" class="outline-btn danger-btn">
+                    ← <span data-i18n="exit">Exit</span>
+                </button>
+
+                <div class="game-top-actions">
+
+                    <button id="gameRulesBtn" class="outline-btn">
+                        📖 <span data-i18n="rules">Rules</span>
+                    </button>
+
+                    <button id="newGameBtn" class="outline-btn">
+                        🔄 <span data-i18n="newGame">New Game</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- LEADERBOARD ABOVE GAME -->
+            <div class="leaderboard-panel">
+
+                <div class="leaderboard-heading">
+                    <span>🏆</span>
+                    <h2 data-i18n="leaderboard">Leaderboard</h2>
+                </div>
+
+                <div id="leaderboard" class="leaderboard"></div>
+
+            </div>
+
+
+            <!-- CURRENT TURN -->
+            <div class="turn-panel">
+
+                <div class="turn-small" data-i18n="currentTurn">
+                    Current Turn
+                </div>
+
+                <div id="currentTurn" class="current-turn">
+                    Player A
+                </div>
+
+            </div>
+
+
+            <!-- LEVEL INFORMATION -->
+            <div id="levelPanel" class="level-panel">
+
+                <div id="levelNumber" class="level-number">
+                    LEVEL 1
+                </div>
+
+                <h2 id="levelTitle">
+                    LUCKY START
+                </h2>
+
+                <p id="levelRules"></p>
+
+            </div>
+
+
+            <!-- GAME MESSAGE -->
+            <div id="gameMessage" class="game-message"></div>
+
+
+            <!-- CARDS -->
+            <div id="cardsGrid" class="cards-grid"></div>
+
+
+            <!-- GAME BOTTOM -->
+            <div class="game-bottom">
+
+                <button id="bottomHomeBtn" class="secondary-btn">
+                    🏠 <span data-i18n="home">Home</span>
+                </button>
+
+                <button id="bottomNewGameBtn" class="primary-btn">
+                    🔄 <span data-i18n="newGame">New Game</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRANSITION OVERLAY -->
+    <div id="transitionOverlay" class="overlay hidden">
+
+        <div class="transition-box">
+
+            <div class="transition-level" id="transitionLevel">
+                LEVEL 2
+            </div>
+
+            <h2 id="transitionTitle">
+                NEGATIVE ZONE
+            </h2>
+
+            <p id="transitionRules"></p>
+
+            <div id="countdownNumber" class="countdown-number">
+                5
+            </div>
+
+            <p id="transitionMessage"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- WINNER OVERLAY -->
+    <div id="winnerOverlay" class="overlay winner-overlay hidden">
+
+        <div class="winner-box">
+
+            <div class="winner-trophy">🏆</div>
+
+            <p class="winner-small" data-i18n="winner">WINNER</p>
+
+            <h1 id="winnerName">
+                Player A
+            </h1>
+
+            <div class="winner-cup">🏆</div>
+
+            <p id="winnerScore" class="winner-score"></p>
+
+            <div class="winner-actions">
+
+                <button id="winnerNewGameBtn" class="primary-btn">
+                    🔄 <span data-i18n="newGame">New Game</span>
+                </button>
+
+                <button id="winnerHomeBtn" class="secondary-btn">
+                    🏠 <span data-i18n="home">Home</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RULES MODAL -->
+    <div id="rulesModal" class="modal hidden">
+
+        <div class="modal-box">
+
+            <button id="closeRulesBtn" class="close-btn">×</button>
+
+            <h2>📖 <span data-i18n="rules">Rules</span></h2>
+
+            <div id="rulesContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HISTORY MODAL -->
+    <div id="historyModal" class="modal hidden">
+
+        <div class="modal-box history-box">
+
+            <button id="closeHistoryBtn" class="close-btn">×</button>
+
+            <h2>📜 <span data-i18n="history">History</span></h2>
+
+            <div id="historyContent"></div>
+
+            <button id="clearHistoryBtn" class="secondary-btn clear-history-btn">
+                🗑️ <span data-i18n="clearHistory">Clear History</span>
+            </button>
+
+        </div>
+
+    </div>
+
+    <div id="welcomePopup" class="welcome-popup-overlay">
+        <div class="welcome-popup">
+            <h2 id="welcomePopupTitle">Welcome to Hidden Thrill</h2>
+            <p id="welcomePopupMessage"></p>
+            <button id="welcomePopupClose">OK</button>
+        </div>
+    </div>
+
+
+    <script src="script(1).js"></script>
+
+</body>
+</html>

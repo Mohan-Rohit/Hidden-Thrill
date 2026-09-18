@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Login | Hidden Thrill</title>
+
+    <link
+        rel="stylesheet"
+        href="auth.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="auth-page">
+
+        <div class="auth-card">
+
+            <div class="auth-logo">
+                🎯
+            </div>
+
+            <span class="auth-eyebrow">
+                WELCOME BACK
+            </span>
+
+            <h1>
+                Hidden Thrill
+            </h1>
+
+            <p class="auth-subtitle">
+                Login to continue your game.
+            </p>
+
+
+            <form id="loginForm">
+
+                <div class="input-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        autocomplete="username"
+                        placeholder="Enter username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="password"
+                            autocomplete="current-password"
+                            placeholder="Enter password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="togglePassword"
+                            class="eye-btn"
+                            aria-label="Show password"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="auth-btn"
+                >
+                    Login
+                </button>
+
+
+                <button
+                    type="button"
+                    id="forgotPasswordBtn"
+                    class="forgot-btn"
+                >
+                    Forgot Password?
+                </button>
+
+
+                <div
+                    id="loginMessage"
+                    class="auth-message"
+                ></div>
+
+            </form>
+
+
+            <div class="auth-divider">
+                <span>OR</span>
+            </div>
+
+
+            <p class="register-text">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create Account
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- FORGOT PASSWORD MODAL -->
+
+    <div
+        id="forgotModal"
+        class="auth-modal hidden"
+    >
+
+        <div class="forgot-card">
+
+            <button
+                id="closeForgot"
+                class="close-auth-modal"
+            >
+                ×
+            </button>
+
+
+            <div class="forgot-icon">
+                🔐
+            </div>
+
+
+            <h2>
+                Reset Password
+            </h2>
+
+
+            <p>
+                Enter your username and create a new password.
+            </p>
+
+
+            <form id="forgotForm">
+
+                <div class="input-group">
+
+                    <label for="forgotUsername">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="forgotUsername"
+                        placeholder="Enter username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="newPassword">
+                        New Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="newPassword"
+                            placeholder="New password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggleNewPassword"
+                            class="eye-btn"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="confirmNewPassword">
+                        Confirm Password
+                    </label>
+
+                    <div class="password-wrapper">
+
+                        <input
+                            type="password"
+                            id="confirmNewPassword"
+                            placeholder="Confirm password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            id="toggleConfirmPassword"
+                            class="eye-btn"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="auth-btn"
+                >
+                    Reset Password
+                </button>
+
+
+                <div
+                    id="forgotMessage"
+                    class="auth-message"
+                ></div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

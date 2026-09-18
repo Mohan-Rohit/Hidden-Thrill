@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Register — Hidden Thrill</title>
+
+    <link
+        rel="stylesheet"
+        href="auth.css"
+    >
+
+</head>
+
+<body>
+
+    <div class="auth-page">
+
+        <div class="auth-card">
+
+            <div class="auth-logo">
+                🎯
+            </div>
+
+            <p class="eyebrow">
+                HIDDEN THRILL
+            </p>
+
+            <h1>
+                Create Account
+            </h1>
+
+            <p class="sub">
+                Create your player account.
+            </p>
+
+
+            <form id="registerForm">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    id="username"
+                    type="text"
+                    required
+                    minlength="4"
+                    maxlength="20"
+                    pattern="[A-Za-z0-9]+"
+                    autocomplete="username"
+                    placeholder="Enter username"
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        id="password"
+                        type="password"
+                        required
+                        minlength="4"
+                        autocomplete="new-password"
+                        placeholder="Create password"
+                    >
+
+                    <button
+                        type="button"
+                        class="eye"
+                        data-target="password"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+
+                <label for="confirmPassword">
+                    Confirm Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        id="confirmPassword"
+                        type="password"
+                        required
+                        minlength="4"
+                        autocomplete="new-password"
+                        placeholder="Confirm password"
+                    >
+
+                    <button
+                        type="button"
+                        class="eye"
+                        data-target="confirmPassword"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="auth-btn"
+                    type="submit"
+                >
+                    Register
+                </button>
+
+            </form>
+
+
+            <p class="switch">
+
+                Already have an account?
+
+                <a href="login.html">
+                    Login
+                </a>
+
+            </p>
+
+
+            <p
+                id="message"
+                class="message"
+            ></p>
+
+        </div>
+
+    </div>
+
+
+    <script src="register.js"></script>
+
+</body>
+
+</html>
